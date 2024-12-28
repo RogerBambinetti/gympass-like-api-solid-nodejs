@@ -1,10 +1,10 @@
-# API Solid - NodeJS + Prisma
+# Gympass API Solid - NodeJS + Prisma
 
 [![English](https://img.shields.io/badge/lang-english-blue.svg)](README.md)
 [![Português](https://img.shields.io/badge/lang-portuguese-green.svg)](README.pt-br.md)
 
 ## Description
-Project applying SOLID principles with TypeScript + Prisma for learning purposes.
+This project consists of a REST API for a Gympass-like app, applying SOLID principles with TypeScript + Prisma.
 
 ## Requirements
 
