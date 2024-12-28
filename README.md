@@ -4,7 +4,7 @@
 [![Português](https://img.shields.io/badge/lang-portuguese-green.svg)](README.pt-br.md)
 
 ## Description
-Project applying SOLID principles with TypeScript + Prsima for learning purposes.
+Project applying SOLID principles with TypeScript + Prisma for learning purposes.
 
 ## Requirements
 
