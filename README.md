@@ -4,7 +4,7 @@
 [![Português](https://img.shields.io/badge/lang-portuguese-green.svg)](README.pt-br.md)
 
 ## Description
-This project consists of a REST API for a Gympass-like app, applying SOLID principles with TypeScript + Prisma.
+This project consists of a REST API for a Gympass-like app, applying SOLID principles with TypeScript + Prisma ORM.
 
 ## Requirements
 
@@ -40,7 +40,7 @@ docker compose up -d
 npx prisma run dev
 ```
 
-5. Finally, run the project in development with:
+5. Finally, run the project in development mode with:
 
 ```bash
 npm run "start:dev"
