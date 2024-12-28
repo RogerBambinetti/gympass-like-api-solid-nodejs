@@ -1,4 +1,4 @@
-# Gympass API Solid - NodeJS + Prisma
+# Gympass-like API Solid - NodeJS + Prisma
 
 [![English](https://img.shields.io/badge/lang-english-blue.svg)](README.md)
 [![Português](https://img.shields.io/badge/lang-portuguese-green.svg)](README.pt-br.md)
