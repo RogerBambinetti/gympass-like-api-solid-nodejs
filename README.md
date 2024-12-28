@@ -40,7 +40,7 @@ docker compose up -d
 npx prisma run dev
 ```
 
-5. Finally, run the project in development with:
+5. Finally, run the project in development mode with:
 
 ```bash
 npm run "start:dev"
