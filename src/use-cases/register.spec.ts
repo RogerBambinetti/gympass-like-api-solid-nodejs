@@ -35,7 +35,7 @@ describe('Register Use Case', () => {
         const email = 'johndoe@gmail.com';
         await registerUseCase.execute({ name: 'John Doe', email, password: '123456' });
 
-        expect(() =>
+        await expect(() =>
             registerUseCase.execute({ name: 'John Doe', email, password: '123456' })
         ).rejects.toBeInstanceOf(UserAlreadyExistsError);
 
