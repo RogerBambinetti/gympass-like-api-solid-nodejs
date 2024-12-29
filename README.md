@@ -10,7 +10,7 @@ This project consists of a REST API for a Gympass-like app, applying SOLID princ
 
 Before you begin, ensure you have met the following requirements:
 
-- Node.js (v16.x).
+- Node.js (v20.x).
 - Npm (v8.x)
 - Docker (v27.x)
 - Docker Compose (v2.x)
