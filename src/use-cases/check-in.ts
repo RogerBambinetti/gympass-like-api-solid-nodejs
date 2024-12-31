@@ -1,4 +1,4 @@
-import { CheckinRepository } from "@/repositories/checkin-repository";
+import { CheckinRepository } from "@/repositories/check-in-repository";
 import { Checkin } from "@prisma/client";
 
 interface CheckinUseCaseInput {
