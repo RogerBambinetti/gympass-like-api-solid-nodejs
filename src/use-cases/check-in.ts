@@ -1,9 +1,13 @@
 import { CheckinRepository } from "@/repositories/check-in-repository";
+import { GymRepository } from "@/repositories/gym-repository";
 import { Checkin } from "@prisma/client";
+import { ResourceNotFoundError } from "./errors/resource-not-found-error";
 
 interface CheckinUseCaseInput {
     userId: string;
     gymId: string;
+    userLatitude: number,
+    userLongitude: number
 }
 
 interface CheckinUseCaseOutput {
@@ -12,9 +16,15 @@ interface CheckinUseCaseOutput {
 
 export class CheckinUseCase {
 
-    constructor(private checkinRepository: CheckinRepository) { }
+    constructor(private checkinRepository: CheckinRepository, private gymRepository: GymRepository) { }
 
     async execute({ userId, gymId }: CheckinUseCaseInput): Promise<CheckinUseCaseOutput> {
+
+        const gym = await this.gymRepository.findById(gymId);
+
+        if (!gym) {
+            throw new ResourceNotFoundError();
+        }
 
         const checkinOnSameDay = await this.checkinRepository.findByUserIdOnDate(userId, new Date());
 
