@@ -14,8 +14,8 @@ export class InMemoryGymRepository implements GymRepository {
             title: data.title,
             description: data.description || null,
             phone: data.phone || null,
-            latitude: new Decimal(data.latitude),
-            longitude: new Decimal(data.longitude)
+            latitude: new Decimal(data.latitude.toString()),
+            longitude: new Decimal(data.longitude.toString())
         };
 
         this.items.push(gym);

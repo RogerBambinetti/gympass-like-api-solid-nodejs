@@ -1,7 +1,9 @@
 import { describe, it, expect, beforeEach, vi, afterEach } from 'vitest';
-import { CheckinUseCase } from './check-in';
+import { CheckinUseCase } from '../check-in';
 import { InMemoryCheckinRepository } from '@/repositories/in-memory/in-memory-checkin-repository';
 import { InMemoryGymRepository } from '@/repositories/in-memory/in-memory-gym-repository';
+import { MaxCheckinNumberError } from '../errors/max-checkin-number';
+import { MaxDistanceError } from '../errors/max-distance-error';
 
 describe('Checkin Use Case', () => {
 
@@ -34,7 +36,7 @@ describe('Checkin Use Case', () => {
 
         await sut.execute({ gymId: '1', userId: '1', userLatitude: 0, userLongitude: 0 });
 
-        await expect(() => sut.execute({ gymId: '1', userId: '1', userLatitude: 0, userLongitude: 0 })).rejects.toBeInstanceOf(Error);
+        await expect(() => sut.execute({ gymId: '1', userId: '1', userLatitude: 0, userLongitude: 0 })).rejects.toBeInstanceOf(MaxCheckinNumberError);
     });
 
     it('Should be able to check in twice in diffent days', async () => {
@@ -52,7 +54,7 @@ describe('Checkin Use Case', () => {
     it('Should not be able to check in on distant gym', async () => {
         await gymRepository.create({ id: '2', title: 'Gym 2', latitude: 0, longitude: 0 });
 
-        await expect(() => sut.execute({ gymId: '2', userId: '1', userLatitude: 500, userLongitude: 500 })).rejects.toBeInstanceOf(Error);
+        await expect(() => sut.execute({ gymId: '2', userId: '1', userLatitude: 500, userLongitude: 500 })).rejects.toBeInstanceOf(MaxDistanceError);
     });
 
 });
