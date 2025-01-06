@@ -21,7 +21,11 @@ export class InMemoryGymRepository implements GymRepository {
         this.items.push(gym);
 
         return gym;
-    } ç
+    }
+
+    async searchMany(query: string) {
+        return this.items.filter(item => item.title.includes(query));
+    }
 
     async findById(id: string) {
         const gym = this.items.find(item => item.id === id);
