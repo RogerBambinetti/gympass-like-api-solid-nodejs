@@ -2,7 +2,7 @@ import { describe, it, expect, beforeEach, vi, afterEach } from 'vitest';
 import { InMemoryGymRepository } from '@/repositories/in-memory/in-memory-gym-repository';
 import { CreateGymUseCase } from '../create-gym';
 
-describe('Checkin Use Case', () => {
+describe('Create Gym Use Case', () => {
 
     let gymRepository: InMemoryGymRepository;
     let sut: CreateGymUseCase;

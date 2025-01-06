@@ -4,7 +4,7 @@ import { GetUserProfileUseCase } from '../get-user-profile';
 import { InMemoryUserRepository } from '@/repositories/in-memory/in-memory-user-repository';
 import { ResourceNotFoundError } from '../errors/resource-not-found-error';
 
-describe('Authenticate Use Case', () => {
+describe('Get User Profile Use Case', () => {
 
     let userRepository: InMemoryUserRepository;
     let sut: GetUserProfileUseCase;

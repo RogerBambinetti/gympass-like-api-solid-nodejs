@@ -2,7 +2,7 @@ import { describe, it, expect, beforeEach, vi, afterEach } from 'vitest';
 import { InMemoryCheckinRepository } from '@/repositories/in-memory/in-memory-checkin-repository';
 import { FetchUserChekinHistoryUseCase } from '../fetch-user-chekin-history';
 
-describe('Checkin Use Case', () => {
+describe('Fetch User Checkin History Use Case', () => {
 
     let checkinRepository: InMemoryCheckinRepository;
     let sut: FetchUserChekinHistoryUseCase;

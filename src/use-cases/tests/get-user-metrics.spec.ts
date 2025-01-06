@@ -2,7 +2,7 @@ import { describe, it, expect, beforeEach, vi, afterEach } from 'vitest';
 import { InMemoryCheckinRepository } from '@/repositories/in-memory/in-memory-checkin-repository';
 import { GetUserMetricsUseCase } from '../get-user-metrics';
 
-describe('Checkin Use Case', () => {
+describe('Get User Metrics Use Case', () => {
 
     let checkinRepository: InMemoryCheckinRepository;
     let sut: GetUserMetricsUseCase;
