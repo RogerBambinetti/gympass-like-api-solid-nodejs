@@ -29,8 +29,23 @@ export class PrismaGymRepository implements GymRepository {
         return gyms;
     }
     findManyNearby(params: FindManyNearby): Promise<Gym[]> {
-        throw new Error("Method not implemented.");
 
+        const radius = 200;
+
+        const gyms = prisma.gym.findMany({
+            where: {
+                latitude: {
+                    lte: params.latitude + radius,
+                    gte: params.latitude - radius
+                },
+                longitude: {
+                    lte: params.longitude + radius,
+                    gte: params.longitude - radius
+                }
+            }
+        });
+
+        return gyms;
 
     }
 
