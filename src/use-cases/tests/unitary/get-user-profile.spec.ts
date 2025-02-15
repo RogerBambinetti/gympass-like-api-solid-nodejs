@@ -1,8 +1,8 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { hash } from 'bcryptjs';
-import { GetUserProfileUseCase } from '../get-user-profile';
+import { GetUserProfileUseCase } from '@/use-cases/get-user-profile';
 import { InMemoryUserRepository } from '@/repositories/in-memory/in-memory-user-repository';
-import { ResourceNotFoundError } from '../errors/resource-not-found-error';
+import { ResourceNotFoundError } from '@/use-cases/errors/resource-not-found-error';
 
 describe('Get User Profile Use Case', () => {
 

@@ -1,9 +1,9 @@
 import { describe, it, expect, beforeEach, vi, afterEach } from 'vitest';
-import { CheckinUseCase } from '../check-in';
+import { CheckinUseCase } from '@/use-cases/check-in';
 import { InMemoryCheckinRepository } from '@/repositories/in-memory/in-memory-checkin-repository';
 import { InMemoryGymRepository } from '@/repositories/in-memory/in-memory-gym-repository';
-import { MaxCheckinNumberError } from '../errors/max-checkin-number';
-import { MaxDistanceError } from '../errors/max-distance-error';
+import { MaxCheckinNumberError } from '@/use-cases/errors/max-checkin-number';
+import { MaxDistanceError } from '@/use-cases/errors/max-distance-error';
 
 describe('Checkin Use Case', () => {
 

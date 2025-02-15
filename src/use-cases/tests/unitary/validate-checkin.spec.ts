@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, vi, afterEach } from 'vitest';
-import { ValidateCheckinUseCase } from '../validate-checkin';
+import { ValidateCheckinUseCase } from '@/use-cases/validate-checkin';
 import { InMemoryCheckinRepository } from '@/repositories/in-memory/in-memory-checkin-repository';
 
 describe('Checkin Use Case', () => {
