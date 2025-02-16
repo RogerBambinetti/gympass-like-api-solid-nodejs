@@ -2,7 +2,7 @@ import request from 'supertest';
 import { app } from '@/app';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 
-describe('Register (e2e)', () => {
+describe('Authenticate (e2e)', () => {
     beforeAll(async () => {
         await app.ready();
     });
@@ -11,8 +11,8 @@ describe('Register (e2e)', () => {
         await app.close();
     });
 
-    it('should register a new user', async () => {
-        const response = await request(app.server)
+    it('should authenticate user', async () => {
+        await request(app.server)
             .post('/users')
             .send({
                 name: 'John Doe',
@@ -20,7 +20,13 @@ describe('Register (e2e)', () => {
                 password: 'password'
             });
 
-        expect(response.statusCode).toBe(201);
+        const response = await request(app.server).post('/sessions').send({
+            email: 'johndoe@example.com',
+            password: 'password'
+        })
+
+        expect(response.statusCode).toBe(200);
+        expect(response.body).toHaveProperty('token');
     });
 
 });
