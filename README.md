@@ -37,7 +37,7 @@ docker compose up -d
 4. Next, we need to run prisma migrations in order to create tables and populate the database:
 
 ```bash
-npx prisma run dev
+npx prisma migrate dev
 ```
 
 5. Finally, run the project in development mode with:
