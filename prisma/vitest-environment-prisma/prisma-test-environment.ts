@@ -24,6 +24,8 @@ export default <Environment>{
     transformMode: 'web',
     async setup(global, options) {
 
+        console.log('Setting up Prisma environment');
+
         const schema = randomUUID();
         const databaseURL = generateDatabaseUrl(schema);
 
